@@ -1,0 +1,146 @@
+/* Peer Tutoring Hub
+   Custom styles accompanying Bootstrap 5.3
+*/
+
+/* Color Palette
+   The design uses a high contrast, green and white color scheme with variations of both colors.
+*/
+:root {
+    --bs-success: #237748;
+    --bs-success-rgb: 35, 119, 72;
+    --bs-body-bg: #e8edf2;
+    --bs-tertiary-bg: #e8edf2;
+}
+
+/*
+    Body style for the background and text color.
+*/
+body {
+    min-height: 100vh;
+    background-color: #e8edf2 !important;
+    color: #263238;
+}
+
+/* Subtle definition between white content cards and the cool greyish-blue background */
+.card {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(88, 115, 145, 0.14) !important;
+    box-shadow: 0 4px 16px rgba(24, 43, 73, 0.05) !important;
+}
+
+/* Softer green palette for better readability and low eye strain */
+.bg-success {
+    background-color: #237748 !important;
+}
+
+/*
+    Visible navigation button separation and pill styling.
+    The gap between buttons helps with mobile navigation. 
+*/
+.navbar-nav {
+    gap: 0.65rem;
+}
+
+/*
+    Nav Button Padding and Shape
+    The buttons are pill shaped and marked with !important to override bootstrap
+*/
+.navbar-nav .nav-link {
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 0.5rem;
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/*
+    Nav Button Hover State
+    The buttons are slightly lighter on hover and have a white border
+    The text color is also white for better contrast
+*/
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+/*
+    Nav Button Active State
+*/
+.navbar-nav .nav-link.active {
+    background-color: #ffffff !important;
+    color: #1e5e38 !important;
+    font-weight: 700;
+    border-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+/*
+    Nav Button Success State
+    Success states would include request forms and tutor profiles
+    
+*/
+.btn-success {
+    background-color: #237748 !important;
+    border-color: #237748 !important;
+}
+
+/*
+    Nav Button Success Hover State
+*/
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #1b5e38 !important;
+    border-color: #1b5e38 !important;
+}
+
+/*
+    Nav Button Outline Success State
+    Outline success states would include buttons that link to external pages
+*/
+.btn-outline-success {
+    color: #237748 !important;
+    border-color: #237748 !important;
+}
+
+/*
+    Nav Button Outline Success Hover State
+*/
+.btn-outline-success:hover,
+.btn-outline-success:focus {
+    background-color: #237748 !important;
+    border-color: #237748 !important;
+    color: #ffffff !important;
+}
+
+/*
+    Table Success State
+    The table success state is used for table that are displaying tutor profiles
+*/
+.table-success {
+    --bs-table-bg: #eaf5ee !important;
+    --bs-table-striped-bg: #e2efe6 !important;
+    --bs-table-striped-color: #1c422b !important;
+    --bs-table-hover-bg: #deede1 !important;
+    --bs-table-hover-color: #1c422b !important;
+    color: #1c422b !important;
+    border-color: #c5dfcc !important;
+}
+
+/* Softer typography contrast */
+.intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #3b4d44;
+}
+
+/*
+    Dark text state
+    The text dark state is used for text that is displaying in dark colors
+*/
+.text-dark {
+    color: #1c3327 !important;
+}

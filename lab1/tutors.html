@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peer Tutoring Hub - Available Tutors</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Nav bar start-->
+    <header>
+        <!-- I am ultizing a nav element with a list of anchor tags so they can be grouped easier for screenreaders-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm" aria-label="Main Navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Peer Tutoring Hub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Ho me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="tutors.html">View Available Tutors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="request-form.html">Request a Tutoring Session</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Nav Bar ends-->
+
+    <main class="container my-auto py-5 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-sm border-0 rounded-4 p-4 p-md-5">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h1 class="h2 fw-bold text-dark mb-1">Available Peer Tutors</h1>
+                            <p class="text-secondary mb-0">Browse our active peer tutors by course subject</p>
+                        </div>
+                        <a href="request-form.html" class="btn btn-success btn-lg px-4 shadow-sm mt-3 mt-md-0">Request a
+                            Session</a>
+                    </div>
+
+                    <div class="table-responsive rounded-3 border mb-4">
+                        <table class="table table-striped table-hover align-middle mb-0">
+                            <caption class="p-3 text-secondary">List of currently available peer tutors and course
+                                specializations</caption>
+                            <thead class="table-success">
+                                <tr>
+                                    <th scope="col" class="py-3 ps-4">Tutor Name</th>
+                                    <th scope="col" class="py-3">Course</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">Maya</td>
+                                    <td><span
+                                            class="badge bg-success-subtle text-success-emphasis border border-success-subtle">IS
+                                            6465</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">Alex Rivera</td>
+                                    <td><span
+                                            class="badge bg-success-subtle text-success-emphasis border border-success-subtle">IS
+                                            6410</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-semibold">Jordan Patel</td>
+                                    <td><span
+                                            class="badge bg-success-subtle text-success-emphasis border border-success-subtle">IS
+                                            6420</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Added a div around the buttons to control spacing and position using flexbox to allow for wrapping on smaller screen -->
+                    <div class="d-flex flex-wrap justify-content-between align-items-center pt-2">
+                        <a href="index.html" class="btn btn-outline-success btn-lg px-4">&larr; Back to Home</a>
+                        <a href="request-form.html" class="btn btn-success btn-lg px-4 shadow-sm">Book a Tutoring
+                            Session &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

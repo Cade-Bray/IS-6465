@@ -1,0 +1,18 @@
+The AI tool used:
+    - Antigravity IDE with Gemini 3.8 Flash on medium context length.
+
+One or more prompts you used:
+    - Show me an example implementation of a bootstrap 5.3 card.
+    - I'd like you to suggest higher contrast colors for the site theme that are primarily green and white variations.
+    - Show me how to use a form element to submit data
+    - Help me center the card and buttons in the main content section.
+    - What are recommended bootstrap column widths for my layout and design?
+
+A brief explanation of how AI helped:
+    - The AI tool assisted me with navigating bootstrap documentation and examples.
+    - AI assisted with testing the code to ensure that all the pages come back with status 200.
+    - AI assisted with suggesting higher contrast colors for the site theme that are primarily green and white variations.
+
+One example of a suggestion you tested, revised, or rejected
+    - It recommended a color scheme that was extremely low contrast and I couldn't read the text on the buttons.
+      I rejected it and prompted for variations of high contrast color sets and their codes.
