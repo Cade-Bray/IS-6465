@@ -25,7 +25,7 @@ class User
         // TODO: Clean, lowercase, and store the email.
         $this->email = cleanText(strtolower($email));
         // TODO: Assign STATUS_ACTIVE to status.
-        $this->status = "STATUS_ACTIVE";
+        $this->status = self::STATUS_ACTIVE;
     }
 }
 
