@@ -39,16 +39,16 @@ var_dump("5" === 5);
 echo '<h2>3. Unary Operators</h2>';
 
 $c = 5;
+$unaryPlus = +$c;
+$unaryMinus = -$c;
+$preIncrement = ++$c;
 
 // TODO: Create variables that demonstrate unary minus, unary plus,
 // and pre-increment. Display the results.
-echo "The value of the variable c: $c<br><br>";
-
-echo "Incremented by one: " . +$c . "<br><br>";
-
-echo "Decremented by one: " . -$c . "<br><br>";
-
-echo "";
+echo "Original value of c: 5<br>";
+echo "Unary plus: $unaryPlus<br>";
+echo "Unary minus: $unaryMinus<br>";
+echo "Pre-increment: $preIncrement<br>";
 
 // 4. Operator Precedence
 echo '<h2>4. Operator Precedence</h2>';
