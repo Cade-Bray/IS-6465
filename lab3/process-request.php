@@ -42,6 +42,8 @@ if (!$errors) {
     echo "<h1>Request received</h1>\n";
     echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Topic: " . htmlspecialchars($topic, ENT_QUOTES, "UTF-8") . "</p>";
+    echo "<p>Date: " . htmlspecialchars($date->format('m-d-Y'), ENT_QUOTES, "UTF-8") . "</p>";
+    echo "<p>Time: " . htmlspecialchars($preferredTime, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Status: Pending review</p>";
 } else {
     // Sending back errors
