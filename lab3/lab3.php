@@ -1,10 +1,10 @@
 <?php
 
 //indexed arrays
-$timeSlots = ["Morning ", "Afternoon ", "Evening "];
-echo $timeSlots[0];        // Morning
-echo $timeSlots[1];        // Afternoon
-echo $timeSlots[2];        // Evening
+$timeSlots = ["Morning", "Afternoon", "Evening"];
+echo $timeSlots[0] . ' ';        // Morning
+echo $timeSlots[1] . ' ';        // Afternoon
+echo $timeSlots[2] . ' ';        // Evening
 echo '<br>';
 
 //associative arrays
@@ -29,8 +29,8 @@ echo '<br>';
 $courses = ["IS 6465", "IS 6495", "IS 6570"];
 
 foreach ($courses as $course) {
-    echo "<option value='' . htmlspecialchars($course, ENT_QUOTES, 'UTF-8') . ''>";
-    echo htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</option>";
+    echo '<option value="' . htmlspecialchars($course, ENT_QUOTES, 'UTF-8') . '">'
+        . htmlspecialchars($course, ENT_QUOTES, 'UTF-8') . '</option>';
 }
 echo '<br>';
 ?>
