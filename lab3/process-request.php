@@ -37,7 +37,7 @@ if (!$validDate || $date < $now) { // date format and past time check
     $errors["preferred_date"] = "Enter a valid preferred date.";
 }
 
-// If there are errors let's send them back.
+// If there are no errors then provide the request details.
 if (!$errors) {
     echo "<h1>Request received</h1>";
     echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
