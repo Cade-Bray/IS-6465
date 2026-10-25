@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST"){
 // This is the enumerated values from the post request
 $course = trim($_POST["course"] ?? "");
 $topic = trim($_POST["topic"] ?? "");
-$preferredTime = $_POST["preferredtime"] ?? "";
-$preferredDate = $_POST["preferreddate"] ?? "";
+$preferredTime = trim($_POST["preferredtime"] ?? "");
+$preferredDate = trim($_POST["preferreddate"] ?? "");
 
 // This is the allowed values for santizing.
 $errors = [];
@@ -44,12 +44,12 @@ if (!$errors) {
     echo "<h1>Request received</h1>\n";
     echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Topic: " . htmlspecialchars($topic, ENT_QUOTES, "UTF-8") . "</p>";
-    echo "<p>Date: " . htmlspecialchars($date->format('m-d-Y'), ENT_QUOTES, "UTF-8") . "</p>";
-    echo "<p>Time: " . htmlspecialchars($preferredTime, ENT_QUOTES, "UTF-8") . "</p>";
+    echo "<p>Preferred date: " . htmlspecialchars($preferredDate, ENT_QUOTES, "UTF-8") . "</p>";
+    echo "<p>Preferred time: " . htmlspecialchars($preferredTime, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Status: Pending review</p>";
 } else {
     // Sending back errors
-    echo "<h1>Request received</h1>";
+    echo "<h1>Request Errors</h1>";
     echo "<h4> Please fix the following values</h4>";
     foreach ($errors as $error => $error_value){
         echo "<p>" . htmlspecialchars($error, ENT_QUOTES, "UTF-8") . ": " 
