@@ -1,12 +1,13 @@
 <?php
 
-echo "Hello from the server";
+echo "Hello from the server\n";
 
-/*
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+if ($_SERVER["REQUEST_METHOD"] !== "POST"){
     http_response_code(405);
     exit("Method not allowed");
 }
+
+/*
 
 $course = trim($_POST["course"] ?? "");
 $topic = trim($_POST["topic"] ?? "");
