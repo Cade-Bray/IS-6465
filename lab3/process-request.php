@@ -33,8 +33,10 @@ if ($topic === "" || mb_strlen($topic) > 120) {
 $date = DateTime::createFromFormat("!Y-m-d", $preferredDate); // changed format to set time to midnight
 $now = (new DateTime())->setTime(0, 0, 0); // set the time to midnight
 $validDate = $date && $date->format("Y-m-d") === $preferredDate;
-if (!$validDate || $date < $now) { // date format and past time check
+if (!$validDate) { // date format and past time check
     $errors["Preferred Date"] = "Enter a valid preferred date.";
+} elseif ($date < $now) {
+    $errors["Preferred Date"] = "Enter a date that is not in the past.";
 }
 
 if (!$errors) {
@@ -50,7 +52,8 @@ if (!$errors) {
     echo "<h1>Request received</h1>";
     echo "<h4> Please fix the following values</h4>";
     foreach ($errors as $error => $error_value){
-        echo "<p>{$error}: {$error_value}</p>";
+        echo "<p>" . htmlspecialchars($error, ENT_QUOTES, "UTF-8") . ": " 
+        . htmlspecialchars($error_value, ENT_QUOTES, "UTF-8") . "</p>";
     }
     echo "<p><strong>Status: Request declined.</strong></p>";
 }
