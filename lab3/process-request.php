@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST"){
 $course = trim($_POST["course"] ?? "");
 $topic = trim($_POST["topic"] ?? "");
 $preferredTime = $_POST["preferredtime"] ?? "";
+$preferredDate = $_POST["preferreddate"] ?? "";
 
 // This is the allowed values for santizing.
 $errors = [];
@@ -31,9 +32,10 @@ if ($topic === "" || mb_strlen($topic) > 120) {
 }
 
 // Prepare data for comparison and then check it
-$date = DateTime::createFromFormat("Y-m-d", $preferredDate);
+$date = DateTime::createFromFormat("!Y-m-d", $preferredDate); // changed format to set time to midnight
+$now = (new DateTime())->setTime(0, 0, 0); // set the time to midnight
 $validDate = $date && $date->format("Y-m-d") === $preferredDate;
-if (!$validDate) {
+if (!$validDate || $date < $now) { // date format and past time check
     $errors["preferred_date"] = "Enter a valid preferred date.";
 }
 
