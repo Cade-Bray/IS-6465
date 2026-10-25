@@ -4,20 +4,21 @@ echo "Hello from the server\n";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST"){
     http_response_code(405);
-    exit("Method not allowed");
+    exit("Method not allowed\n");
 }
 
-/*
-
+// This is the enumerated values from the post request
 $course = trim($_POST["course"] ?? "");
 $topic = trim($_POST["topic"] ?? "");
 $preferredTime = $_POST["preferredtime"] ?? "";
-*/
 
-/*
+// This is the allowed values for santizing.
 $errors = [];
 $allowedCourses = ["IS 6465", "IS 6495", "IS 6570"];
 $allowedTimes = ["Morning", "Afternoon", "Evening"];
+
+/*
+
 
 if (!in_array($course, $allowedCourses, true)) {
     $errors["course"] = "Select a valid course.";
