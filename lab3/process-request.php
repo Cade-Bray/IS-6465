@@ -17,9 +17,7 @@ $errors = [];
 $allowedCourses = ["IS 6465", "IS 6495", "IS 6570"];
 $allowedTimes = ["Morning", "Afternoon", "Evening"];
 
-/*
-
-
+// Check data for business rule adherence to reject malformed requests
 if (!in_array($course, $allowedCourses, true)) {
     $errors["course"] = "Select a valid course.";
 }
@@ -27,7 +25,6 @@ if (!in_array($course, $allowedCourses, true)) {
 if (!in_array($preferredTime, $allowedTimes, true)) {
     $errors["preferred_time"] = "Select a valid preferred time.";
 }
-*/
 
 
 /*
