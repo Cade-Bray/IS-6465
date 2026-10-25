@@ -18,15 +18,15 @@ $allowedTimes = ["Morning", "Afternoon", "Evening"];
 
 // Check data for business rule adherence to reject malformed requests
 if (!in_array($course, $allowedCourses, true)) {
-    $errors["course"] = "Select a valid course.";
+    $errors["Course"] = "Select a valid course.";
 }
 
 if (!in_array($preferredTime, $allowedTimes, true)) {
-    $errors["preferred_time"] = "Select a valid preferred time.";
+    $errors["Preferred Time"] = "Select a valid preferred time.";
 }
 
 if ($topic === "" || mb_strlen($topic) > 120) {
-    $errors["topic"] = "Enter a topic of 1 to 120 characters.";
+    $errors["Topic"] = "Enter a topic of 1 to 120 characters.";
 }
 
 // Prepare data for comparison and then check it
@@ -34,15 +34,23 @@ $date = DateTime::createFromFormat("!Y-m-d", $preferredDate); // changed format 
 $now = (new DateTime())->setTime(0, 0, 0); // set the time to midnight
 $validDate = $date && $date->format("Y-m-d") === $preferredDate;
 if (!$validDate || $date < $now) { // date format and past time check
-    $errors["preferred_date"] = "Enter a valid preferred date.";
+    $errors["Preferred Date"] = "Enter a valid preferred date.";
 }
 
-// If there are no errors then provide the request details.
 if (!$errors) {
-    echo "<h1>Request received</h1>";
+    // If there are no errors then provide the request details.
+    echo "<h1>Request received</h1>\n";
     echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Topic: " . htmlspecialchars($topic, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Status: Pending review</p>";
+} else {
+    // Sending back errors
+    echo "<h1>Request received</h1>";
+    echo "<h4> Please fix the following values</h4>";
+    foreach ($errors as $error => $error_value){
+        echo "<p>{$error}: {$error_value}</p>";
+    }
+    echo "<p><strong>Status: Request declined.</strong></p>";
 }
 
 ?>
