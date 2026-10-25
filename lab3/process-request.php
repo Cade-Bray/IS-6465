@@ -26,19 +26,16 @@ if (!in_array($preferredTime, $allowedTimes, true)) {
     $errors["preferred_time"] = "Select a valid preferred time.";
 }
 
-
-/*
 if ($topic === "" || mb_strlen($topic) > 120) {
     $errors["topic"] = "Enter a topic of 1 to 120 characters.";
 }
 
+// Prepare data for comparison and then check it
 $date = DateTime::createFromFormat("Y-m-d", $preferredDate);
 $validDate = $date && $date->format("Y-m-d") === $preferredDate;
-
 if (!$validDate) {
     $errors["preferred_date"] = "Enter a valid preferred date.";
 }
-*/
 
 /*
 if (!$errors) {
