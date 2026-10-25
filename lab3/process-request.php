@@ -39,14 +39,12 @@ if (!$validDate || $date < $now) { // date format and past time check
     $errors["preferred_date"] = "Enter a valid preferred date.";
 }
 
-/*
+// If there are errors let's send them back.
 if (!$errors) {
     echo "<h1>Request received</h1>";
     echo "<p>Course: " . htmlspecialchars($course, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Topic: " . htmlspecialchars($topic, ENT_QUOTES, "UTF-8") . "</p>";
     echo "<p>Status: Pending review</p>";
 }
-*/
-
 
 ?>
