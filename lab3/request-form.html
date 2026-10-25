@@ -14,21 +14,35 @@
         <form class="request-form" action="process-request.php" method="post">
             <div class="form-group">
                 <label for="course">Course</label>
-                <input id="course" name="course" class="form-control" required>
+                <select id="course" name="course" class="form-select" required>
+                    <option value="" selected disabled>Select a course...</option>
+                    <option value="IS 6465">IS 6465</option>
+                    <option value="IS 6495">IS 6495</option>
+                    <option value="IS 6570">IS 6570</option>
+                </select>
             </div>
 
             <!-- topic -->
+            <div class="form-group">
+                <label for="topic">What do you need help with?</label>
+                <input id="topic" name="topic" class="form-control" required>
+            </div>
 
             <!-- preferred date -->
             <div class="form-group">
                 <label for="date">Preferred date</label>
-                <input id="date" name="date" class="form-control" type="date" required>
+                <input id="date" name="preferreddate" class="form-control" type="date" required>
             </div>
 
             <!-- preferred time -->
             <div class="form-group">
                 <label for="time">Preferred time</label>
-                <input id="time" name="time" class="form-control" type="time" required>
+                <select id="time" name="preferredtime" class="form-select" required>
+                    <option value="" selected disabled>Select a time...</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                </select>
             </div>
 
             <button class="btn btn-danger" type="submit">Request session</button>
