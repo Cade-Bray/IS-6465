@@ -76,3 +76,20 @@ I entered the following values:
 3. The message recieved by the application is "Request could not be submitted - preferred date cannot be in the past."
 
 4. The business rule that provided this error message is located in the process-request.php and it makes a comparison of todays date against the formatted provided date. If it is not it provides an error message.
+
+##### Review Testing and CRUD pages
+1. The validation-tests.php page of the system shows that valid time, missing time, altered value, multiple valid topics, missing topics, altered topic, minimum length, maximum length, too short, and too long.
+
+2. The requests.php page allows an admin to see the requests made through the system. It appears that at this time it's just static information. The associated details pane allows an admin to view, edit, and cancel a request.
+
+3. Identifying the page that represents each CRUD action:
+- Create = request-form.php
+- Read one request = request-details.php
+- Read all requests = requests.php
+- Update = edit-request.php
+- Delete = delete-request.php
+
+4. Follow-up questions
+- In the request details url we can see an appened '?request-id=' followed up a numberical value.
+- The GET query parameter is appropriate for viewing one request because we're asking the database to fetch data and return it to us. That is the core usage of a GET request.
+- The Update and Delete should later use a POST command because a GET command is intended to indicate information is being fetched versus sent. We could alternatively use the HTTP rest method PUT for update or DELETE for the delete instead of POST to even further align with REST APIs.
