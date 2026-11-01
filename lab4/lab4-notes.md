@@ -78,7 +78,7 @@ I entered the following values:
 4. The business rule that provided this error message is located in the process-request.php and it makes a comparison of todays date against the formatted provided date. If it is not it provides an error message.
 
 ### Review Testing and CRUD pages
-1. The validation-tests.php page of the system shows that valid time, missing time, altered value, multiple valid topics, missing topics, altered topic, minimum length, maximum length, too short, and too long.
+1. The validation-tests.php page of the system shows that valid time, missing time, altered value, multiple valid topics, missing topics, altered topic, minimum length, maximum length, too short, and too long. All tests report as passing.
 
 2. The requests.php page allows an admin to see the requests made through the system. It appears that at this time it's just static information. The associated details pane allows an admin to view, edit, and cancel a request.
 
