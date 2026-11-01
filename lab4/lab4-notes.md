@@ -1,4 +1,5 @@
 # Lab Four Notes
+## https://github.com/Cade-Bray/IS-6465/tree/main/lab4
 
 ### Request Form Logic Description
 Throughout the logic defined in the process-request.php file I can see some common trends. To begin we can see that there are no object oriented coding definitions in this file. The file contains mostly HTML with three "require once" php file calls. These file calls link to layout components. By using these files we can produce highly reusable code. If we ever need to update the these areas of reuse we need only to update the included specific file and it will propogate throughout the system. This reduces system overhead and maintance. The form itself makes a post request to 'process-request.php' which holds the associated logic for input santizing, input value checking, and the provided error reporting. This is a wonderful way to structure your business logic in a centralized location. 
