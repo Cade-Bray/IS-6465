@@ -29,14 +29,16 @@ ORDER BY t.preferred_date DESC;
 ```
 
 The corresponding output to this command
->╭────────────┬──────────────┬─────────────────────────┬─────────┬────────────────────────────────┬────────────────┬────────────────┬───────────╮
->│ request_id │ student_name │      student_email      │ course  │             topic              │ preferred_date │ preferred_time │  status   │
->╞════════════╪══════════════╪═════════════════════════╪═════════╪════════════════════════════════╪════════════════╪════════════════╪═══════════╡
->│          4 │ Avery Patel  │ avery.patel@example.edu │ IS 6465 │ SQLite CRUD                    │ 2026-11-12     │ 09:00          │ Open      │
->│          3 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ SQL SELECT                     │ 2026-11-10     │ 11:00          │ Open      │
->│          2 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ Forms                          │ 2026-11-09     │ 15:00          │ Open      │
->│          1 │ Maria Lopez  │ maria.lopez@example.com │ IS 6465 │ PHP arrays and forms - updated │ 2026-10-12     │ 15:00          │ Cancelled │
->╰────────────┴──────────────┴─────────────────────────┴─────────┴────────────────────────────────┴────────────────┴────────────────┴───────────╯
+```text
+╭────────────┬──────────────┬─────────────────────────┬─────────┬────────────────────────────────┬────────────────┬────────────────┬───────────╮
+│ request_id │ student_name │      student_email      │ course  │             topic              │ preferred_date │ preferred_time │  status   │
+╞════════════╪══════════════╪═════════════════════════╪═════════╪════════════════════════════════╪════════════════╪════════════════╪═══════════╡
+│          4 │ Avery Patel  │ avery.patel@example.edu │ IS 6465 │ SQLite CRUD                    │ 2026-11-12     │ 09:00          │ Open      │
+│          3 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ SQL SELECT                     │ 2026-11-10     │ 11:00          │ Open      │
+│          2 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ Forms                          │ 2026-11-09     │ 15:00          │ Open      │
+│          1 │ Maria Lopez  │ maria.lopez@example.com │ IS 6465 │ PHP arrays and forms - updated │ 2026-10-12     │ 15:00          │ Cancelled │
+╰────────────┴──────────────┴─────────────────────────┴─────────┴────────────────────────────────┴────────────────┴────────────────┴───────────╯
+```
 
 1. The join condition connects upon the student_id in both tables. Even though it's not displayed it's being utilized.
 
@@ -63,7 +65,8 @@ WHERE request_id = 4;
 
 2. Before SELECT output
 
->Request List
+```text
+Request List
 ╭────────────┬──────────────┬─────────────────────────┬─────────┬────────────────────────────────┬────────────────┬────────────────┬───────────╮
 │ request_id │ student_name │      student_email      │ course  │             topic              │ preferred_date │ preferred_time │  status   │
 ╞════════════╪══════════════╪═════════════════════════╪═════════╪════════════════════════════════╪════════════════╪════════════════╪═══════════╡
@@ -72,10 +75,12 @@ WHERE request_id = 4;
 │          2 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ Forms and Updated Info         │ 2026-11-09     │ 15:00          │ Open      │
 │          1 │ Maria Lopez  │ maria.lopez@example.com │ IS 6465 │ PHP arrays and forms - updated │ 2026-10-12     │ 15:00          │ Cancelled │
 ╰────────────┴──────────────┴─────────────────────────┴─────────┴────────────────────────────────┴────────────────┴────────────────┴───────────╯
+```
 
 3. Avery's Cancelled Status
 
->Request List
+```text
+Request List
 ╭────────────┬──────────────┬─────────────────────────┬─────────┬────────────────────────────────┬────────────────┬────────────────┬───────────╮
 │ request_id │ student_name │      student_email      │ course  │             topic              │ preferred_date │ preferred_time │  status   │
 ╞════════════╪══════════════╪═════════════════════════╪═════════╪════════════════════════════════╪════════════════╪════════════════╪═══════════╡
@@ -84,6 +89,7 @@ WHERE request_id = 4;
 │          2 │ Jordan Lee   │ jordan.lee@example.edu  │ IS 6465 │ Forms and Updated Info         │ 2026-11-09     │ 15:00          │ Open      │
 │          1 │ Maria Lopez  │ maria.lopez@example.com │ IS 6465 │ PHP arrays and forms - updated │ 2026-10-12     │ 15:00          │ Cancelled │
 ╰────────────┴──────────────┴─────────────────────────┴─────────┴────────────────────────────────┴────────────────┴────────────────┴───────────╯
+```
 
 4. The WHERE clause is essential to the UPDATE statement because without it the entire table would have been updated. The WHERE clause ensures on what're looking for gets updated.
 
@@ -91,7 +97,8 @@ WHERE request_id = 4;
 
 ### Part 5: Delete on test request
 
-> Request List
+```text
+Request List
 ╭────────────┬──────────────┬─────────┬────────────────────────────────┬───────────╮
 │ request_id │ student_name │ course  │             topic              │  status   │
 ╞════════════╪══════════════╪═════════╪════════════════════════════════╪═══════════╡
@@ -100,8 +107,10 @@ WHERE request_id = 4;
 │          2 │ Jordan Lee   │ IS 6465 │ Forms and Updated Info         │ Open      │
 │          1 │ Maria Lopez  │ IS 6465 │ PHP arrays and forms - updated │ Cancelled │
 ╰────────────┴──────────────┴─────────┴────────────────────────────────┴───────────╯
+```
 
->Request List
+```text
+Request List
 ╭────────────┬──────────────┬─────────┬────────────────────────┬───────────╮
 │ request_id │ student_name │ course  │         topic          │  status   │
 ╞════════════╪══════════════╪═════════╪════════════════════════╪═══════════╡
@@ -109,6 +118,7 @@ WHERE request_id = 4;
 │          3 │ Jordan Lee   │ IS 6465 │ SQL SELECT             │ Open      │
 │          2 │ Jordan Lee   │ IS 6465 │ Forms and Updated Info │ Open      │
 ╰────────────┴──────────────┴─────────┴────────────────────────┴───────────╯
+```
 
 The WHERE clause is crucial to get right in a DELETE statement otherwise you'll delete unintentional data and have no way to retrieve it.
 
