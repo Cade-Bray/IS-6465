@@ -123,3 +123,19 @@ Request List
 The WHERE clause is crucial to get right in a DELETE statement otherwise you'll delete unintentional data and have no way to retrieve it.
 
 ### Part 6: Reflect on the CRUD Workflow
+
+| CRUD action | SQL statement used in this lab | Peer Tutoring Hub example |
+| :--- | :--- | :--- |
+| Create | INSERT INTO tutoring_requests () VALUES () | Submitting a new appointment via request-form.php. |
+| Read | SELECT ... FROM tutoring_requests JOIN students ... | Viewing appointments on requests.php. |
+| Update | UPDATE tutoring_requests SET status = 'Cancelled' WHERE request_id = 4; | Cancelling or editing an appointment via edit-request.php. |
+| Delete | DELETE FROM tutoring_requests WHERE request_id = 1; | Removing a request via delete-request.php. |
+
+
+1. Through the student_id foreign key in tutoring_requests, which references student_id in students.
+
+2. The UNIQUE constraint on student_email.
+
+3. It would apply to the entire table, updating or deleting every row.
+
+4. To prevent SQL injection vulnerabilities and safely handle special characters like quotes.
