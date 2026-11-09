@@ -15,3 +15,15 @@ CREATE TABLE if not exists tutoring_requests (
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (student_id) REFERENCES students(student_id)
 );
+
+SELECT * FROM students;
+
+SELECT
+  r.request_id,
+  s.student_name,
+  s.student_email,
+  r.course, r.topic,
+  r.preferred_date, r.preferred_time, r.status
+FROM tutoring_requests AS r
+JOIN students AS s ON r.student_id = s.student_id
+ORDER BY r.preferred_date;
