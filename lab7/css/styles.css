@@ -110,7 +110,7 @@ h1 {
 }
 
 /* Modern card-based and stacked forms */
-.card form,
+.card form:not(.d-flex),
 form.stacked-form {
     display: block;
     max-width: 100%;

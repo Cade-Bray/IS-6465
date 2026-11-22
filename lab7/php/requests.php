@@ -50,25 +50,23 @@ require_once __DIR__ . '/../includes/nav.php';
 
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-body p-3">
-            <form method="get" action="requests.php" class="row g-2 justify-content-center align-items-center mx-auto" style="max-width: 780px;">
-                <div class="col-12 col-sm-auto flex-grow-1" style="min-width: 200px; max-width: 280px;">
-                    <select class="form-select" name="course" aria-label="Filter by Course" style="min-width: 180px;">
-                        <option value="">All Courses</option>
-                        <?php foreach (['IS 6465', 'IS 6495', 'IS 6570'] as $c): ?>
-                            <option value="<?= escapeHtml($c) ?>" <?= $c === $course ? 'selected' : '' ?>><?= escapeHtml($c) ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="col-12 col-sm-auto flex-grow-1" style="min-width: 200px; max-width: 280px;">
-                    <select class="form-select" name="status" aria-label="Filter by Status" style="min-width: 180px;">
-                        <option value="">All Statuses</option>
-                        <?php foreach (['Open', 'Cancelled', 'Assigned', 'Completed'] as $st): ?>
-                            <option value="<?= escapeHtml($st) ?>" <?= $st === $status ? 'selected' : '' ?>><?= escapeHtml($st) ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="col-12 col-sm-auto d-flex gap-2 justify-content-center">
-                    <button type="submit" class="btn btn-primary px-4 fw-semibold">Filter</button>
+            <form method="get" action="requests.php" class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                <select class="form-select w-auto" name="course" aria-label="Filter by Course" style="min-width: 180px;">
+                    <option value="">All Courses</option>
+                    <?php foreach (['IS 6465', 'IS 6495', 'IS 6570'] as $c): ?>
+                        <option value="<?= escapeHtml($c) ?>" <?= $c === $course ? 'selected' : '' ?>><?= escapeHtml($c) ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <select class="form-select w-auto" name="status" aria-label="Filter by Status" style="min-width: 180px;">
+                    <option value="">All Statuses</option>
+                    <?php foreach (['Open', 'Cancelled', 'Assigned', 'Completed'] as $st): ?>
+                        <option value="<?= escapeHtml($st) ?>" <?= $st === $status ? 'selected' : '' ?>><?= escapeHtml($st) ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary px-3 fw-semibold">Filter</button>
                     <?php if ($course !== '' || $status !== ''): ?>
                         <a href="requests.php" class="btn btn-outline-secondary px-3">Reset</a>
                     <?php endif; ?>

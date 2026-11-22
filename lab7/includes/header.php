@@ -40,15 +40,15 @@ $cssVersion = file_exists(__DIR__ . '/../css/styles.css') ? filemtime(__DIR__ . 
       padding: 0 !important;
       color: inherit !important;
     }
-    .card form,
+    .card form:not(.d-flex),
     form.stacked-form {
-      display: block !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
+      display: block;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
     }
     .form-select {
       min-width: 180px;
