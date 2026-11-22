@@ -35,7 +35,7 @@ require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/nav.php';
 ?>
 
-<main class="container py-4">
+<main class="container py-4 flex-grow-1" style="flex: 1 0 auto;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0"><?= escapeHtml($pageTitle) ?></h1>
