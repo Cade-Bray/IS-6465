@@ -322,26 +322,26 @@ footer {
         font-size: 21px;
     }
 
-    main form {
+    main form.legacy-grid-form {
         grid-template-columns: 1fr;
         margin: 24px 16px;
         padding: 24px;
     }
 
-    main form fieldset:first-of-type,
-    main form fieldset:nth-of-type(2),
-    main form label[for="course"],
-    main form #course,
-    main form label[for="topic"],
-    main form #topic,
-    main form label[for="preferreddate"],
-    main form #preferreddate,
-    main form button {
+    main form.legacy-grid-form fieldset:first-of-type,
+    main form.legacy-grid-form fieldset:nth-of-type(2),
+    main form.legacy-grid-form label[for="course"],
+    main form.legacy-grid-form #course,
+    main form.legacy-grid-form label[for="topic"],
+    main form.legacy-grid-form #topic,
+    main form.legacy-grid-form label[for="preferreddate"],
+    main form.legacy-grid-form #preferreddate,
+    main form.legacy-grid-form button {
         grid-column: 1;
         grid-row: auto;
     }
 
-    main form button {
+    main form.legacy-grid-form button {
         width: 100%;
     }
 

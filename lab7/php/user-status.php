@@ -83,8 +83,8 @@ require_once __DIR__ . '/../includes/nav.php';
                 </div>
 
                 <div class="d-flex gap-2">
-                    <button type="submit" class="btn btn-primary">Confirm Status Change</button>
-                    <a href="users.php" class="btn btn-outline-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-sm btn-primary px-3">Confirm Status Change</button>
+                    <a href="users.php" class="btn btn-sm btn-outline-secondary px-3">Cancel</a>
                 </div>
             </form>
         </div>

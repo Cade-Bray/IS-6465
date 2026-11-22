@@ -109,8 +109,8 @@ require_once __DIR__ . '/../includes/nav.php';
                     <input type="hidden" name="user_id" value="<?= (int)$targetId ?>">
 
                     <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-danger">Confirm Permanent Deletion</button>
-                        <a href="users.php" class="btn btn-outline-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-sm btn-danger px-3">Confirm Permanent Deletion</button>
+                        <a href="users.php" class="btn btn-sm btn-outline-secondary px-3">Cancel</a>
                     </div>
                 </form>
             <?php endif; ?>
