@@ -21,7 +21,7 @@ require_once __DIR__ . '/../includes/nav.php';
 <main class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0">Manage User Accounts</h1>
-        <span class="badge bg-secondary fs-6"><?= count($users) ?> account(s)</span>
+        <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle fs-6"><?= count($users) ?> account(s)</span>
     </div>
 
     <?php if (isset($_GET['role_updated'])): ?>
@@ -106,17 +106,21 @@ require_once __DIR__ . '/../includes/nav.php';
                                 <td>
                                     <?php
                                     $roleBadge = match ($u['role']) {
-                                        'Administrator' => 'bg-danger',
-                                        'Tutor' => 'bg-info text-dark',
-                                        default => 'bg-primary',
+                                        'Administrator' => 'bg-danger-subtle text-danger-emphasis border border-danger-subtle',
+                                        'Tutor' => 'bg-info-subtle text-info-emphasis border border-info-subtle',
+                                        default => 'bg-primary-subtle text-primary-emphasis border border-primary-subtle',
                                     };
                                     ?>
                                     <span class="badge <?= $roleBadge ?>"><?= escapeHtml($u['role']) ?></span>
                                 </td>
                                 <td>
-                                    <span class="badge <?= $u['status'] === 'Active' ? 'bg-success' : 'bg-secondary' ?>">
-                                        <?= escapeHtml($u['status']) ?>
-                                    </span>
+                                    <?php
+                                    $statusBadge = match ($u['status']) {
+                                        'Active' => 'bg-success-subtle text-success-emphasis border border-success-subtle',
+                                        default => 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
+                                    };
+                                    ?>
+                                    <span class="badge <?= $statusBadge ?>"><?= escapeHtml($u['status']) ?></span>
                                 </td>
                                 <td class="small text-muted"><?= escapeHtml($u['created_at']) ?></td>
                                 <td class="text-end">

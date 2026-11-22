@@ -63,7 +63,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <dt class="col-sm-4 text-muted">Current Status</dt>
                 <dd class="col-sm-8">
-                    <span class="badge <?= $targetUser['status'] === 'Active' ? 'bg-success' : 'bg-secondary' ?>">
+                    <span class="badge <?= $targetUser['status'] === 'Active' ? 'bg-success-subtle text-success-emphasis border border-success-subtle' : 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle' ?>">
                         <?= escapeHtml($targetUser['status']) ?>
                     </span>
                 </dd>

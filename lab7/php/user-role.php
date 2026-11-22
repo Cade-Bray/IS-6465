@@ -62,7 +62,7 @@ require_once __DIR__ . '/../includes/nav.php';
                 <dd class="col-sm-8"><?= escapeHtml($targetUser['email']) ?></dd>
 
                 <dt class="col-sm-4 text-muted">Current Role</dt>
-                <dd class="col-sm-8"><span class="badge bg-secondary"><?= escapeHtml($targetUser['role']) ?></span></dd>
+                <dd class="col-sm-8"><span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle"><?= escapeHtml($targetUser['role']) ?></span></dd>
             </dl>
 
             <form method="post" action="user-role.php">

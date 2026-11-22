@@ -107,11 +107,11 @@ require_once __DIR__ . '/../includes/nav.php';
                         <?php foreach ($rows as $r):
                             $topic = decodeTopic($r['topic']);
                             $statusBadge = match ($r['status']) {
-                                'Open' => 'bg-success',
-                                'Cancelled' => 'bg-secondary',
-                                'Assigned' => 'bg-info text-dark',
-                                'Completed' => 'bg-primary',
-                                default => 'bg-light text-dark',
+                                'Open' => 'bg-success-subtle text-success-emphasis border border-success-subtle',
+                                'Cancelled' => 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
+                                'Assigned' => 'bg-info-subtle text-info-emphasis border border-info-subtle',
+                                'Completed' => 'bg-primary-subtle text-primary-emphasis border border-primary-subtle',
+                                default => 'bg-light text-dark border',
                             };
                         ?>
                             <tr>
