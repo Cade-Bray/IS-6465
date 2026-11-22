@@ -62,27 +62,24 @@ require_once __DIR__ . '/../includes/nav.php';
 
 <main class="container py-4" style="max-width: 600px;">
     <div class="card shadow-sm border-0">
-        <div class="card-header bg-danger text-white py-3">
+        <div class="card-header bg-danger text-white py-3 text-center">
             <h1 class="h4 mb-0">Cancel Tutoring Request</h1>
         </div>
-        <div class="card-body p-4">
-            <p class="lead">Are you sure you want to cancel request <strong>#<?= (int)$id ?></strong>?</p>
-            <p class="text-muted small">
-                The record will be preserved in the system with status <strong>Cancelled</strong> for retention and reporting integrity.
-            </p>
+        <div class="card-body p-4 text-center">
+            <p class="lead mb-4">Are you sure you want to cancel your request?</p>
 
             <?php if ($r['status'] === 'Open'): ?>
                 <form method="post" action="delete-request.php">
                     <input type="hidden" name="request_id" value="<?= (int)$id ?>">
                     <input type="hidden" name="csrf_token" value="<?= escapeHtml(csrfToken()) ?>">
 
-                    <div class="d-flex gap-2 mt-4">
+                    <div class="d-flex justify-content-center gap-2">
                         <button type="submit" class="btn btn-danger">Yes, Cancel Request</button>
                         <a href="request-details.php?request_id=<?= (int)$id ?>" class="btn btn-outline-secondary">Keep Request</a>
                     </div>
                 </form>
             <?php else: ?>
-                <div class="alert alert-warning" role="alert">
+                <div class="alert alert-warning text-center" role="alert">
                     Only Open requests can be cancelled. This request currently has status <strong><?= escapeHtml($r['status']) ?></strong>.
                 </div>
                 <a href="request-details.php?request_id=<?= (int)$id ?>" class="btn btn-secondary">Back to Details</a>
