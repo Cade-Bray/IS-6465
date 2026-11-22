@@ -26,11 +26,11 @@ require_once __DIR__ . '/../includes/nav.php';
                 <div class="row g-3 mb-3">
                     <div class="col-md-6">
                         <label for="student_name" class="form-label">Student Name</label>
-                        <input type="text" class="form-control bg-light" id="student_name" name="student_name" value="<?= escapeHtml($user['full_name']) ?>" readonly required maxlength="120">
+                        <input type="text" class="form-control bg-light" id="student_name" name="student_name" value="<?= escapeHtml($user['full_name']) ?>" readonly required maxlength="120" tabindex="-1">
                     </div>
                     <div class="col-md-6">
                         <label for="student_email" class="form-label">Student Email</label>
-                        <input type="email" class="form-control bg-light" id="student_email" name="student_email" value="<?= escapeHtml($user['email']) ?>" readonly required maxlength="254">
+                        <input type="email" class="form-control bg-light" id="student_email" name="student_email" value="<?= escapeHtml($user['email']) ?>" readonly required maxlength="254" tabindex="-1">
                     </div>
                 </div>
 

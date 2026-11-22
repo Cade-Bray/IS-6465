@@ -281,6 +281,22 @@ main form.legacy-grid-form button:focus-visible {
     outline-offset: 3px;
 }
 
+/* Read-only form controls (e.g. authenticated student info on request-form.php) */
+.form-control[readonly],
+.form-control:read-only {
+    cursor: default;
+    caret-color: transparent;
+    user-select: none;
+}
+
+.form-control[readonly]:focus,
+.form-control:read-only:focus {
+    background-color: var(--bs-light, #f8f9fa);
+    border-color: var(--bs-border-color, #dee2e6);
+    box-shadow: none;
+    outline: 0;
+}
+
 /* Table styling: modern tables fill their card container */
 
 .table-responsive,
