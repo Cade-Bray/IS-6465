@@ -14,6 +14,16 @@ Help IS 6465 students understand how business requirements become working PHP an
 
 ## Project conventions
 
+## PHP runtime compatibility
+
+This skill targets PHP 8. Before writing or revising PHP, verify the installed runtime with `php -v`.
+
+- If the project runs on PHP 8.0 or later, PHP 8 features such as union types (for example, `array|false`) are permitted.
+- If the project runs on PHP 7.x, do not introduce PHP 8-only syntax. Preserve behavior with PHP 7-compatible declarations; for a function that may return either an array or `false`, omit the return type rather than changing `false` to `null`.
+- When the runtime version is unknown, ask the user to run `php -v` or use PHP 7-compatible syntax until the version is confirmed.
+
+After each PHP change, lint every changed PHP file with `php -l <file>`. Do not claim the implementation works until the changed files pass linting in the target runtime.
+
 Use the existing project structure:
 
 - `php/` — application PHP files and related folders
@@ -136,6 +146,8 @@ If required information is missing, identify the gap rather than inventing a bus
 
 Review the relevant PHP files, database schema, and form field names.
 
+Check the runtime PHP version before selecting language features. Match the implementation to that version and identify any existing incompatible syntax before testing the feature.
+
 Determine what already works.
 
 ### Step 3: Plan changes
@@ -160,7 +172,7 @@ Use clear language suitable for beginning PHP students.
 
 ### Step 6: Review
 
-Check validation, SQL parameters, database constraints, output encoding, and error handling.
+Check PHP-version compatibility, validation, SQL parameters, database constraints, output encoding, and error handling. Run `php -l` on each changed PHP file and report the actual result.
 
 ### Step 7: Recommend tests
 
