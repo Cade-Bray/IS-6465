@@ -50,6 +50,9 @@ $cssVersion = file_exists(__DIR__ . '/../css/styles.css') ? filemtime(__DIR__ . 
       box-shadow: none !important;
       border-radius: 0 !important;
     }
+    .form-select {
+      min-width: 180px;
+    }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">

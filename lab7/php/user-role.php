@@ -71,7 +71,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <div class="mb-4">
                     <label for="role" class="form-label fw-semibold">Select New Role</label>
-                    <select class="form-select" id="role" name="role" required>
+                    <select class="form-select" id="role" name="role" style="min-width: 220px;" required>
                         <option value="Student" <?= $targetUser['role'] === 'Student' ? 'selected' : '' ?>>Student</option>
                         <option value="Tutor" <?= $targetUser['role'] === 'Tutor' ? 'selected' : '' ?>>Tutor</option>
                         <option value="Administrator" <?= $targetUser['role'] === 'Administrator' ? 'selected' : '' ?>>Administrator</option>

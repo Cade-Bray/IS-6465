@@ -47,29 +47,29 @@ require_once __DIR__ . '/../includes/nav.php';
 
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-body p-3">
-            <form method="get" action="users.php" class="row g-2 align-items-center">
-                <div class="col-md-5">
-                    <input type="text" class="form-control" name="search" placeholder="Search by name or email..." value="<?= escapeHtml($search) ?>">
+            <form method="get" action="users.php" class="row g-2 justify-content-center align-items-center mx-auto" style="max-width: 980px;">
+                <div class="col-12 col-md-4 flex-grow-1" style="min-width: 240px; max-width: 360px;">
+                    <input type="text" class="form-control" name="search" placeholder="Search by name or email..." value="<?= escapeHtml($search) ?>" aria-label="Search users">
                 </div>
-                <div class="col-md-3">
-                    <select class="form-select" name="role">
+                <div class="col-12 col-sm-auto flex-grow-1" style="min-width: 180px; max-width: 220px;">
+                    <select class="form-select" name="role" aria-label="Filter by Role" style="min-width: 180px;">
                         <option value="">All Roles</option>
                         <option value="Student" <?= $role === 'Student' ? 'selected' : '' ?>>Student</option>
                         <option value="Tutor" <?= $role === 'Tutor' ? 'selected' : '' ?>>Tutor</option>
                         <option value="Administrator" <?= $role === 'Administrator' ? 'selected' : '' ?>>Administrator</option>
                     </select>
                 </div>
-                <div class="col-md-2">
-                    <select class="form-select" name="status">
+                <div class="col-12 col-sm-auto flex-grow-1" style="min-width: 180px; max-width: 220px;">
+                    <select class="form-select" name="status" aria-label="Filter by Status" style="min-width: 180px;">
                         <option value="">All Statuses</option>
                         <option value="Active" <?= $status === 'Active' ? 'selected' : '' ?>>Active</option>
                         <option value="Inactive" <?= $status === 'Inactive' ? 'selected' : '' ?>>Inactive</option>
                     </select>
                 </div>
-                <div class="col-md-2 d-flex gap-2">
-                    <button type="submit" class="btn btn-primary flex-grow-1">Filter</button>
+                <div class="col-12 col-sm-auto d-flex gap-2 justify-content-center">
+                    <button type="submit" class="btn btn-primary px-4 fw-semibold">Filter</button>
                     <?php if ($search !== '' || $role !== '' || $status !== ''): ?>
-                        <a href="users.php" class="btn btn-outline-secondary">Reset</a>
+                        <a href="users.php" class="btn btn-outline-secondary px-3">Reset</a>
                     <?php endif; ?>
                 </div>
             </form>

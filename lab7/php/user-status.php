@@ -75,7 +75,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <div class="mb-4">
                     <label for="status" class="form-label fw-semibold">Select Account Status</label>
-                    <select class="form-select" id="status" name="status" required>
+                    <select class="form-select" id="status" name="status" style="min-width: 280px;" required>
                         <option value="Active" <?= $targetUser['status'] === 'Active' ? 'selected' : '' ?>>Active (Can log in)</option>
                         <option value="Inactive" <?= $targetUser['status'] === 'Inactive' ? 'selected' : '' ?>>Inactive (Login blocked)</option>
                     </select>

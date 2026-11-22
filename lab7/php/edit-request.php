@@ -49,7 +49,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                     <div class="mb-3">
                         <label class="form-label" for="course">Course</label>
-                        <select class="form-select" id="course" name="course" required>
+                        <select class="form-select" id="course" name="course" style="min-width: 200px;" required>
                             <?php foreach (['IS 6465', 'IS 6495', 'IS 6570'] as $c): ?>
                                 <option value="<?= escapeHtml($c) ?>" <?= $c === $r['course'] ? 'selected' : '' ?>><?= escapeHtml($c) ?></option>
                             <?php endforeach; ?>

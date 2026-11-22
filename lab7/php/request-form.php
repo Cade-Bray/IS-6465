@@ -38,7 +38,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <div class="mb-3">
                     <label for="course" class="form-label">Course</label>
-                    <select class="form-select" id="course" name="course" required>
+                    <select class="form-select" id="course" name="course" style="min-width: 200px;" required>
                         <option value="">Choose a course</option>
                         <option value="IS 6465">IS 6465</option>
                         <option value="IS 6495">IS 6495</option>

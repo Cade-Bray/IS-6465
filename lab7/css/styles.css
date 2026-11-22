@@ -103,6 +103,12 @@ h1 {
     background-color: #243b53;
 }
 
+/* Dropdown select menus */
+.form-select {
+    min-width: 180px;
+    cursor: pointer;
+}
+
 /* Modern card-based and stacked forms */
 .card form,
 form.stacked-form {
