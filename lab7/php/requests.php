@@ -35,7 +35,7 @@ require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/nav.php';
 ?>
 
-<main class="container py-4 flex-grow-1" style="flex: 1 0 auto;">
+<main class="container py-4 pb-5 flex-grow-1" style="flex: 1 0 auto;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 mb-0"><?= escapeHtml($pageTitle) ?></h1>
@@ -44,7 +44,7 @@ require_once __DIR__ . '/../includes/nav.php';
             </p>
         </div>
         <?php if ($user['role'] === 'Student'): ?>
-            <a href="request-form.php" class="btn btn-primary">Request a Session</a>
+            <a href="request-form.php" class="btn btn-primary px-3 fw-semibold">Request a Session</a>
         <?php endif; ?>
     </div>
 
@@ -77,30 +77,39 @@ require_once __DIR__ . '/../includes/nav.php';
         </div>
     </div>
 
-    <div class="card shadow-sm border-0">
+    <div class="card shadow-sm border-0 mb-5 overflow-hidden">
         <?php if (empty($rows)): ?>
             <div class="card-body p-5 text-center text-muted">
-                <p class="lead mb-2">No matching requests found.</p>
+                <div class="mb-3">
+                    <span class="d-inline-block p-3 rounded-circle bg-light text-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-inbox" viewBox="0 0 16 16">
+                            <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4zm9.954 5H10.45a2.5 2.5 0 0 1-4.9 0H1.066l.32 2.562a.5.5 0 0 0 .497.438h12.234a.5.5 0 0 0 .496-.438zM3.809 3.563A1.5 1.5 0 0 1 4.981 3h6.038a1.5 1.5 0 0 1 1.172.563l3.7 4.625a1 1 0 0 1 .109 1.036l-1 8A1 1 0 0 1 14 18H2a1 1 0 0 1-.992-.876l-1-8a1 1 0 0 1 .11-1.036z"/>
+                        </svg>
+                    </span>
+                </div>
+                <h5 class="fw-semibold text-dark">No matching requests found</h5>
                 <?php if ($user['role'] === 'Student'): ?>
-                    <p class="small mb-3">You do not have any tutoring requests matching your criteria.</p>
-                    <a href="request-form.php" class="btn btn-sm btn-primary">Submit a New Request</a>
+                    <p class="small text-muted mb-3">You do not have any tutoring requests matching your criteria.</p>
+                    <a href="request-form.php" class="btn btn-primary px-4 fw-semibold">Submit a Request</a>
+                <?php else: ?>
+                    <p class="small text-muted mb-0">No tutoring requests match the selected filters.</p>
                 <?php endif; ?>
             </div>
         <?php else: ?>
             <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
+                <table class="table table-striped table-hover align-middle mb-0 w-100">
                     <thead class="table-light">
-                        <tr>
-                            <th scope="col" style="width: 70px;">ID</th>
+                        <tr class="text-secondary small fw-semibold">
+                            <th scope="col" style="width: 80px;" class="ps-4">ID</th>
                             <?php if ($user['role'] === 'Administrator'): ?>
-                                <th scope="col">Student</th>
+                                <th scope="col" style="min-width: 180px;">Student</th>
                             <?php endif; ?>
-                            <th scope="col">Course</th>
-                            <th scope="col">Details</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Status</th>
-                            <th scope="col" class="text-end">Action</th>
+                            <th scope="col" style="width: 120px;">Course</th>
+                            <th scope="col">Help Details</th>
+                            <th scope="col" style="width: 140px;">Preferred Date</th>
+                            <th scope="col" style="width: 120px;">Time</th>
+                            <th scope="col" style="width: 130px;">Status</th>
+                            <th scope="col" class="text-end pe-4" style="width: 100px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,27 +124,50 @@ require_once __DIR__ . '/../includes/nav.php';
                             };
                         ?>
                             <tr>
-                                <td class="fw-semibold">#<?= (int)$r['request_id'] ?></td>
+                                <td class="ps-4">
+                                    <span class="font-monospace fw-semibold text-secondary">#<?= (int)$r['request_id'] ?></span>
+                                </td>
                                 <?php if ($user['role'] === 'Administrator'): ?>
                                     <td>
-                                        <div class="fw-semibold"><?= escapeHtml($r['student_name']) ?></div>
+                                        <div class="fw-semibold text-dark"><?= escapeHtml($r['student_name']) ?></div>
                                         <div class="small text-muted"><?= escapeHtml($r['student_email'] ?? '') ?></div>
                                     </td>
                                 <?php endif; ?>
-                                <td><span class="badge bg-light text-dark border"><?= escapeHtml($r['course']) ?></span></td>
-                                <td class="text-truncate" style="max-width: 260px;" title="<?= escapeHtml($topic['reason']) ?>">
-                                    <?= escapeHtml($topic['reason']) ?>
+                                <td>
+                                    <span class="badge bg-light text-dark border px-2 py-1 fw-medium"><?= escapeHtml($r['course']) ?></span>
                                 </td>
-                                <td><?= escapeHtml($r['preferred_date']) ?></td>
-                                <td><?= escapeHtml($r['preferred_time']) ?></td>
-                                <td><span class="badge <?= $statusBadge ?>"><?= escapeHtml($r['status']) ?></span></td>
-                                <td class="text-end">
-                                    <a href="request-details.php?request_id=<?= (int)$r['request_id'] ?>" class="btn btn-sm btn-outline-primary">View</a>
+                                <td>
+                                    <div class="text-truncate text-secondary" style="max-width: 320px;" title="<?= escapeHtml($topic['reason']) ?>">
+                                        <?= escapeHtml($topic['reason']) ?>
+                                    </div>
+                                    <?php if (!empty($topic['topics'])): ?>
+                                        <div class="mt-1">
+                                            <?php foreach ((array)$topic['topics'] as $t): ?>
+                                                <span class="badge bg-light text-secondary border me-1 small"><?= escapeHtml($t) ?></span>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <span class="fw-medium text-dark"><?= escapeHtml($r['preferred_date']) ?></span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-light text-secondary border"><?= escapeHtml($r['preferred_time']) ?></span>
+                                </td>
+                                <td>
+                                    <span class="badge <?= $statusBadge ?> px-3 py-1"><?= escapeHtml($r['status']) ?></span>
+                                </td>
+                                <td class="text-end pe-4">
+                                    <a href="request-details.php?request_id=<?= (int)$r['request_id'] ?>" class="btn btn-sm btn-outline-primary px-3 rounded-pill fw-medium">View</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+            </div>
+            <div class="card-footer bg-white border-top py-3 px-4 d-flex justify-content-between align-items-center text-muted small">
+                <span>Showing <strong><?= count($rows) ?></strong> tutoring request<?= count($rows) === 1 ? '' : 's' ?></span>
+                <span><?= $user['role'] === 'Student' ? 'Student Portal' : 'Administrator View' ?></span>
             </div>
         <?php endif; ?>
     </div>

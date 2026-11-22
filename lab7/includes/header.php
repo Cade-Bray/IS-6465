@@ -53,6 +53,22 @@ $cssVersion = file_exists(__DIR__ . '/../css/styles.css') ? filemtime(__DIR__ . 
     .form-select {
       min-width: 180px;
     }
+    .table-responsive table.table,
+    .card table.table,
+    table.table {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) > * {
+      background-color: #ffffff;
+    }
+    .table-striped > tbody > tr:nth-of-type(even) > * {
+      background-color: #f8fafc;
+    }
+    .table-hover > tbody > tr:hover > * {
+      background-color: #eef4fc !important;
+    }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">

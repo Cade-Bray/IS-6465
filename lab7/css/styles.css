@@ -281,9 +281,47 @@ main form.legacy-grid-form button:focus-visible {
     outline-offset: 3px;
 }
 
-/* Tutor table */
+/* Table styling: modern tables fill their card container */
 
-table {
+.table-responsive,
+.card .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-responsive table.table,
+.card table.table,
+table.table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Middle contrasting offsets for rows */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #ffffff;
+}
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: #f8fafc;
+}
+.table-hover > tbody > tr:hover > * {
+    background-color: #eef4fc !important;
+}
+
+table th {
+    padding: 12px 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Legacy tutor table (only when designated with .legacy-table) */
+
+table.legacy-table {
     width: calc(100% - 80px);
     max-width: 900px;
     margin: 40px auto;
@@ -296,17 +334,6 @@ caption {
     text-align: left;
     font-size: 26px;
     font-weight: 700;
-}
-
-th,
-td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid #d6dbe2;
-}
-
-th {
-    background-color: #eef1f4;
 }
 
 /* Footer */
@@ -351,7 +378,7 @@ footer {
         width: 100%;
     }
 
-    table {
+    table.legacy-table {
         width: calc(100% - 32px);
     }
 }
