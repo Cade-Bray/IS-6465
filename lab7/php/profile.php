@@ -28,7 +28,7 @@ require_once __DIR__ . '/../includes/nav.php';
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
             <h1 class="h4 mb-0">My Profile</h1>
-            <span class="badge <?= $user['status'] === 'Active' ? 'bg-success-subtle text-success-emphasis border border-success-subtle' : 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle' ?> fs-6">
+            <span class="badge <?= getStatusBadgeClass($user['status']) ?> fs-6">
                 <?= escapeHtml($user['status']) ?>
             </span>
         </div>
@@ -42,7 +42,7 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <dt class="col-sm-4 text-muted">Account Role</dt>
                 <dd class="col-sm-8">
-                    <span class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle fs-6"><?= escapeHtml($user['role']) ?></span>
+                    <span class="badge <?= getRoleBadgeClass($user['role']) ?> fs-6"><?= escapeHtml($user['role']) ?></span>
                     <small class="text-muted ms-2">(read-only)</small>
                 </dd>
 

@@ -67,8 +67,8 @@ require_once __DIR__ . '/../includes/nav.php';
 
                 <dt class="col-sm-4 text-muted">Role / Status</dt>
                 <dd class="col-sm-8">
-                    <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle"><?= escapeHtml($targetUser['role']) ?></span>
-                    <span class="badge <?= $targetUser['status'] === 'Active' ? 'bg-success-subtle text-success-emphasis border border-success-subtle' : 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle' ?> ms-1">
+                    <span class="badge <?= getRoleBadgeClass($targetUser['role']) ?>"><?= escapeHtml($targetUser['role']) ?></span>
+                    <span class="badge <?= getStatusBadgeClass($targetUser['status']) ?> ms-1">
                         <?= escapeHtml($targetUser['status']) ?>
                     </span>
                 </dd>

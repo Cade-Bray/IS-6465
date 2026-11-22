@@ -37,7 +37,7 @@ $userName = $_SESSION['display_name'] ?? '';
           <li class="nav-item d-flex align-items-center me-lg-3 text-light py-1 py-lg-0">
             <span class="small d-inline-flex align-items-center">
               Signed in as&nbsp;<strong><?= htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') ?></strong>
-              <span class="badge bg-light text-dark ms-2 align-middle"><?= htmlspecialchars($userRole, ENT_QUOTES, 'UTF-8') ?></span>
+              <span class="badge <?= getRoleBadgeClass($userRole) ?> ms-2 align-middle"><?= htmlspecialchars($userRole, ENT_QUOTES, 'UTF-8') ?></span>
             </span>
           </li>
           <li class="nav-item d-flex align-items-center">

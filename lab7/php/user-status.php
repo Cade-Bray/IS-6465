@@ -61,9 +61,16 @@ require_once __DIR__ . '/../includes/nav.php';
                 <dt class="col-sm-4 text-muted">Email</dt>
                 <dd class="col-sm-8"><?= escapeHtml($targetUser['email']) ?></dd>
 
+                <dt class="col-sm-4 text-muted">Role</dt>
+                <dd class="col-sm-8">
+                    <span class="badge <?= getRoleBadgeClass($targetUser['role']) ?>">
+                        <?= escapeHtml($targetUser['role']) ?>
+                    </span>
+                </dd>
+
                 <dt class="col-sm-4 text-muted">Current Status</dt>
                 <dd class="col-sm-8">
-                    <span class="badge <?= $targetUser['status'] === 'Active' ? 'bg-success-subtle text-success-emphasis border border-success-subtle' : 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle' ?>">
+                    <span class="badge <?= getStatusBadgeClass($targetUser['status']) ?>">
                         <?= escapeHtml($targetUser['status']) ?>
                     </span>
                 </dd>

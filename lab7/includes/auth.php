@@ -128,3 +128,29 @@ function getCurrentUser(PDO $pdo): ?array
     }
     return $user;
 }
+
+/**
+ * Return consistent CSS classes for role badges across all application views.
+ */
+function getRoleBadgeClass(string $role): string
+{
+    return match ($role) {
+        'Administrator' => 'bg-danger-subtle text-danger-emphasis border border-danger-subtle',
+        'Tutor' => 'bg-info-subtle text-info-emphasis border border-info-subtle',
+        default => 'bg-primary-subtle text-primary-emphasis border border-primary-subtle',
+    };
+}
+
+/**
+ * Return consistent CSS classes for status badges across all application views.
+ */
+function getStatusBadgeClass(string $status): string
+{
+    return match ($status) {
+        'Active', 'Open' => 'bg-success-subtle text-success-emphasis border border-success-subtle',
+        'Cancelled' => 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
+        'Assigned' => 'bg-info-subtle text-info-emphasis border border-info-subtle',
+        'Completed' => 'bg-primary-subtle text-primary-emphasis border border-primary-subtle',
+        default => 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
+    };
+}

@@ -103,23 +103,10 @@ require_once __DIR__ . '/../includes/nav.php';
                                 <td class="fw-semibold"><?= escapeHtml($u['full_name']) ?></td>
                                 <td><?= escapeHtml($u['email']) ?></td>
                                 <td>
-                                    <?php
-                                    $roleBadge = match ($u['role']) {
-                                        'Administrator' => 'bg-danger-subtle text-danger-emphasis border border-danger-subtle',
-                                        'Tutor' => 'bg-info-subtle text-info-emphasis border border-info-subtle',
-                                        default => 'bg-primary-subtle text-primary-emphasis border border-primary-subtle',
-                                    };
-                                    ?>
-                                    <span class="badge <?= $roleBadge ?>"><?= escapeHtml($u['role']) ?></span>
+                                    <span class="badge <?= getRoleBadgeClass($u['role']) ?>"><?= escapeHtml($u['role']) ?></span>
                                 </td>
                                 <td>
-                                    <?php
-                                    $statusBadge = match ($u['status']) {
-                                        'Active' => 'bg-success-subtle text-success-emphasis border border-success-subtle',
-                                        default => 'bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle',
-                                    };
-                                    ?>
-                                    <span class="badge <?= $statusBadge ?>"><?= escapeHtml($u['status']) ?></span>
+                                    <span class="badge <?= getStatusBadgeClass($u['status']) ?>"><?= escapeHtml($u['status']) ?></span>
                                 </td>
                                 <td class="small text-muted"><?= escapeHtml($u['created_at']) ?></td>
                                 <td class="text-end">
