@@ -41,7 +41,7 @@ main {
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
-.badge {
+.welcome-card .badge {
     display: inline-block;
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
@@ -79,6 +79,23 @@ main {
 
 h1 {
     margin: 0;
+    padding: 0;
+    color: #1f2937;
+    font-size: 1.75rem;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.card-header h1,
+.card-title,
+.card h1 {
+    background-color: transparent !important;
+    padding: 0 !important;
+    color: inherit;
+}
+
+.page-banner h1 {
+    margin: 0;
     padding: 18px 36px;
     color: #ffffff;
     font-size: 24px;
@@ -86,9 +103,27 @@ h1 {
     background-color: #243b53;
 }
 
-/* Request form */
+/* Modern card-based and stacked forms */
+.card form,
+form.stacked-form {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
 
-main form {
+.card form button,
+form.stacked-form button {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* Legacy request form (only when explicitly requested via .legacy-grid-form) */
+
+main form.legacy-grid-form {
     max-width: 900px;
     margin: 42px auto;
     padding: 32px;
@@ -101,12 +136,12 @@ main form {
 }
 
 /* Remove the duplicate dropdown because radio buttons collect the time */
-main form label[for="preferredtime"],
-main form #preferredtime {
+main form.legacy-grid-form label[for="preferredtime"],
+main form.legacy-grid-form #preferredtime {
     display: none;
 }
 
-main form fieldset {
+main form.legacy-grid-form fieldset {
     min-width: 0;
     margin: 0;
     padding: 18px 20px;
@@ -115,36 +150,36 @@ main form fieldset {
     background-color: #f8fafc;
 }
 
-main form fieldset:first-of-type {
+main form.legacy-grid-form fieldset:first-of-type {
     grid-column: 1;
     grid-row: 1;
 }
 
-main form fieldset:nth-of-type(2) {
+main form.legacy-grid-form fieldset:nth-of-type(2) {
     grid-column: 2;
     grid-row: 1;
 }
 
-main form legend {
+main form.legacy-grid-form legend {
     padding: 0 8px;
     color: #243b53;
     font-size: 17px;
     font-weight: 700;
 }
 
-main form fieldset div {
+main form.legacy-grid-form fieldset div {
     margin: 12px 0;
 }
 
-main form fieldset label {
+main form.legacy-grid-form fieldset label {
     margin-left: 8px;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
 }
 
-main form input[type="checkbox"],
-main form input[type="radio"] {
+main form.legacy-grid-form input[type="checkbox"],
+main form.legacy-grid-form input[type="radio"] {
     width: 18px;
     height: 18px;
     margin: 0;
@@ -155,49 +190,49 @@ main form input[type="radio"] {
 
 /* Course */
 
-main form label[for="course"] {
+main form.legacy-grid-form label[for="course"] {
     grid-column: 1;
     grid-row: 2;
 }
 
-main form #course {
+main form.legacy-grid-form #course {
     grid-column: 1;
     grid-row: 3;
 }
 
 /* Help topic */
 
-main form label[for="topic"] {
+main form.legacy-grid-form label[for="topic"] {
     grid-column: 1;
     grid-row: 4;
 }
 
-main form #topic {
+main form.legacy-grid-form #topic {
     grid-column: 1;
     grid-row: 5;
 }
 
 /* Preferred date */
 
-main form label[for="preferreddate"] {
+main form.legacy-grid-form label[for="preferreddate"] {
     grid-column: 2;
     grid-row: 2;
 }
 
-main form #preferreddate {
+main form.legacy-grid-form #preferreddate {
     grid-column: 2;
     grid-row: 3;
 }
 
-main form > label {
+main form.legacy-grid-form > label {
     align-self: end;
     font-size: 16px;
     font-weight: 700;
 }
 
-main form input:not([type="checkbox"]):not([type="radio"]),
-main form select,
-main form textarea {
+main form.legacy-grid-form input:not([type="checkbox"]):not([type="radio"]),
+main form.legacy-grid-form select,
+main form.legacy-grid-form textarea {
     width: 100%;
     min-height: 46px;
     padding: 10px 14px;
@@ -208,15 +243,15 @@ main form textarea {
     border-radius: 8px;
 }
 
-main form input:focus,
-main form select:focus,
-main form textarea:focus {
+main form.legacy-grid-form input:focus,
+main form.legacy-grid-form select:focus,
+main form.legacy-grid-form textarea:focus {
     outline: 3px solid rgba(75, 131, 189, 0.25);
     outline-offset: 1px;
     border-color: #4b83bd;
 }
 
-main form button {
+main form.legacy-grid-form button {
     grid-column: 1 / -1;
     grid-row: 6;
     justify-self: start;
@@ -231,11 +266,11 @@ main form button {
     cursor: pointer;
 }
 
-main form button:hover {
+main form.legacy-grid-form button:hover {
     background-color: #b90000;
 }
 
-main form button:focus-visible {
+main form.legacy-grid-form button:focus-visible {
     outline: 3px solid #243b53;
     outline-offset: 3px;
 }

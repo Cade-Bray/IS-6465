@@ -28,6 +28,28 @@ $cssVersion = file_exists(__DIR__ . '/../css/styles.css') ? filemtime(__DIR__ . 
     footer {
       margin-top: auto !important;
     }
+    h1 {
+      background-color: transparent !important;
+      padding: 0 !important;
+      color: inherit !important;
+    }
+    .card-header h1,
+    .card-title,
+    .card h1 {
+      background-color: transparent !important;
+      padding: 0 !important;
+      color: inherit !important;
+    }
+    .card form,
+    form.stacked-form {
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
