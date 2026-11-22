@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/auth.php';
+startSecureSession();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,4 +11,4 @@
   <link rel="stylesheet" href="../css/styles.css">
   <title>Peer Tutoring Hub</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
