@@ -34,17 +34,20 @@ $userName = $_SESSION['display_name'] ?? '';
       </ul>
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <?php if ($isLoggedIn): ?>
-          <li class="nav-item me-lg-3 text-light py-1 py-lg-0">
-            <span class="small">Signed in as <strong><?= htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') ?></strong> <span class="badge bg-light text-dark ms-1"><?= htmlspecialchars($userRole, ENT_QUOTES, 'UTF-8') ?></span></span>
+          <li class="nav-item d-flex align-items-center me-lg-3 text-light py-1 py-lg-0">
+            <span class="small d-inline-flex align-items-center">
+              Signed in as&nbsp;<strong><?= htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') ?></strong>
+              <span class="badge bg-light text-dark ms-2 align-middle"><?= htmlspecialchars($userRole, ENT_QUOTES, 'UTF-8') ?></span>
+            </span>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-flex align-items-center">
             <a class="btn btn-sm btn-outline-light" href="logout.php">Log Out</a>
           </li>
         <?php else: ?>
-          <li class="nav-item">
+          <li class="nav-item d-flex align-items-center">
             <a class="nav-link" href="login.php">Log In</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-flex align-items-center">
             <a class="btn btn-sm btn-outline-light ms-lg-2" href="register.php">Register</a>
           </li>
         <?php endif; ?>
